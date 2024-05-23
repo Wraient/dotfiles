@@ -17,7 +17,7 @@
 
 	"modules-left": ["custom/padd","custom/l_end","wlr/taskbar","mpris","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","idle_inhibitor","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","backlight","network","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/wallchange","custom/theme","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","network","pulseaudio","pulseaudio#microphone","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/wallchange","custom/theme","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
@@ -41,7 +41,7 @@
 
     "mpris": {
         "format": "{player_icon} {dynamic}",
-        "rotate": 0,
+	"rotate": 0,
         "format-paused": "{status_icon} <i>{dynamic}</i>",
         "player-icons": { 
             "default": "▶",
@@ -50,7 +50,7 @@
         "status-icons": {
             "paused": "⏸"
         },
-        // "ignored-players": ["firefox"]
+        "ignored-players": ["brave"],
         "max-length": 1000,
         "interval": 1
     },
@@ -65,9 +65,10 @@
     },
 
     "clock": {
-        "format": "{:%I:%M %p}",
+        // "format": "{:%I:%M %p}",
+        "format": "{:%R %d.%m.%y}",
         "rotate": 0,
-        "format-alt": "{:%R 󰃭 %d·%m·%y}",
+        "format-alt": "{:%R %d·%m·%y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
@@ -101,21 +102,22 @@
 
     "network": {
         "tooltip": true,
-        "format-wifi": " ",
+        // "format-wifi": "📡",
+        "format-wifi": "<span foreground='#99ffdd'>↓ {bandwidthDownBytes}</span> <span foreground='#ffcc66'>↑ {bandwidthUpBytes}</span>",
         "rotate": 0,
-        "format-ethernet": "󰈀 ",
-        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 ",
+        "format-ethernet": "🌐",
+        "tooltip-format": "network: <big><b>{essid}</b></big>\nsignal strength: <b>{signaldbm}dbm ({signalstrength}%)</b>\nfrequency: <b>{frequency}mhz</b>\ninterface: <b>{ifname}</b>\nip: <b>{ipaddr}/{cidr}</b>\ngateway: <b>{gwaddr}</b>\nnetmask: <b>{netmask}</b>",
+        "format-linked": "📡 {ifname} (No IP)",
+        "format-disconnected": "🚫",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-alt": "<span foreground='#99ffdd'>↓ {bandwidthDownBytes}</span> <span foreground='#ffcc66'>↑ {bandwidthUpBytes}</span>",
         "interval": 2,
     },
 
     "pulseaudio": {
         "format": "{icon} {volume}",
         "rotate": 0,
-        "format-muted": "婢",
+        "format-muted": "🔇",
         "on-click": "pavucontrol -t 3",
         "on-click-middle": "volumecontrol.sh -o m",
         "on-scroll-up": "volumecontrol.sh -o i",
@@ -123,21 +125,21 @@
         "tooltip-format": "{icon} {desc} // {volume}%",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "🎧",
+            "hands-free": "🎧",
+            "headset": "🎧",
+            "phone": "📱",
+            "portable": "📱",
+            "car": "🚗",
+            "default": ["🔈", "🔉", "🔊"]
         }
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "rotate": 0,
-        "format-source": "",
-        "format-source-muted": "",
+        "format-source": "🔉",
+        "format-source-muted": "🤫",
         "on-click": "pavucontrol -t 4",
         "on-click-middle": "volumecontrol.sh -i m",
         "on-scroll-up": "volumecontrol.sh -i i",
@@ -154,7 +156,7 @@
         "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
         "interval": 86400, // once every day
         "tooltip": true,
-        "signal": 20,
+        "signal": 20
     },
     "tray": {
         "icon-size": 17,
@@ -170,61 +172,17 @@
         },
         "format": "{icon} {capacity}%",
         "rotate": 0,
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": "🔋 {capacity}%",
+        "format-plugged": "🔌 {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-    "custom/wallchange": {
-        "format": "{}",
-        "rotate": 0,
-        "exec": "echo ; echo 󰆊 switch wallpaper",
-        "on-click": "swwwallpaper.sh -n",
-        "on-click-right": "swwwallpaper.sh -p",
-        "on-click-middle": "sleep 0.1 && swwwallselect.sh",
-        "interval" : 86400, // once every day
-        "tooltip": true
-    },
-
-    "custom/theme": {
-        "format": "{}",
-        "rotate": 0,
-        "exec": "echo ; echo 󰟡 switch theme",
-        "on-click": "themeswitch.sh -n",
-        "on-click-right": "themeswitch.sh -p",
-        "on-click-middle": "sleep 0.1 && themeselect.sh",
-        "interval" : 86400, // once every day
-        "tooltip": true
-    },
-
-    "custom/wbar": {
-        "format": "{}", //    //
-        "rotate": 0,
-        "exec": "echo ; echo  switch bar //  dock",
-        "on-click": "wbarconfgen.sh n",
-        "on-click-right": "wbarconfgen.sh p",
-        "on-click-middle": "sleep 0.1 && quickapps.sh kitty firefox spotify code dolphin",
-        "interval" : 86400,
-        "tooltip": true
-    },
-
-    "custom/cliphist": {
-        "format": "{}",
-        "rotate": 0,
-        "exec": "echo ; echo 󰅇 clipboard history",
-        "on-click": "sleep 0.1 && cliphist.sh c",
-        "on-click-right": "sleep 0.1 && cliphist.sh d",
-        "on-click-middle": "sleep 0.1 && cliphist.sh w",
-        "interval" : 86400, // once every day
-        "tooltip": true
+        "format-icons": ["🪫", "💤", "⚠️", "🟥", "🟧", "🟨", "🟩", "🟢", "🔋"]
     },
 
     "custom/power": {
-        "format": "{}",
+        "format": "🔒{}",
         "rotate": 0,
-        "exec": "echo ; echo  logout",
-        "on-click": "logoutlaunch.sh 2",
+        "exec": "echo ; echo 🔒 logout",
+        "on-click": "wlogout 2",
         "on-click-right": "logoutlaunch.sh 1",
         "interval" : 86400, // once every day
         "tooltip": true
