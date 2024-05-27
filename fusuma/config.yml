@@ -12,13 +12,13 @@ swipe:
     left:
       command: "playerctl next --player spotify" # next song spotify, default threshold
       treshold: 2
-  3:
-    right:
-      command: "playerctl previous --player brave" # previous song spotify, default threshold
-      treshold: 2
-    left:
-      command: "playerctl next --player brave" # next song spotify, default threshold
-      treshold: 2
+  # 3:
+  #   right:
+  #     command: "playerctl previous --player brave" # previous song spotify, default threshold
+  #     treshold: 2
+  #   left:
+  #     command: "playerctl next --player brave" # next song spotify, default threshold
+  #     treshold: 2
 
 hold:
   3:
