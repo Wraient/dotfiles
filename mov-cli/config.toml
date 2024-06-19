@@ -1,7 +1,7 @@
 [mov-cli]
 version = 1
 player = "mpv"
-debug = false
+debug = true
 # parser = "lxml"
 editor = "vi"
 skip_update_checker = true
@@ -11,7 +11,8 @@ fzf = true
 
 [mov-cli.plugins] # E.g: namespace = "package-name"
 test = "mov-cli-test"
-
+youtube = "mov-cli-youtube"
+films = "film-central"
 # [mov-cli.scrapers]
 # default = "films"
 
