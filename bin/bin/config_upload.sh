@@ -1,0 +1,1 @@
+/home/wraient/Projects/HyprInsomnia/config_upload.sh
