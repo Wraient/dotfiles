@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Replace 'https://www.example.com' with the actual URL
+URL="http://10.201.21.1/logout"
+
+# Loop 50 times
+for i in {1..50}; do
+  # Make the GET request using curl and store the response
+  curl -s "$URL" > /dev/null
+
+  # Clear the line and move cursor to the beginning
+  printf "$CLEAR_LINE$CURSOR_START"
+
+  # Update progress message with current iteration and total count
+  printf "done [%-2d/%-3d] times" "$i" "$(( $i + 0 ))"
+
+  # Flush output immediately
+  fflush
+
+  # Optionally, add a delay between requests (adjust seconds as needed)
+  sleep 0.1
+done
+
+echo "Completed 50 GET requests to $URL"
+echo "Connecting to stanza"
+stanza

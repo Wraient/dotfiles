@@ -1,0 +1,96 @@
+#copy these files
+~/.zshrc
+~/.local/bin
+~/.config/hypr/
+/home/wraient/.zshrc
+/home/wraient/.local/bin
+/home/wraient/.config/hypr
+/home/wraient/.config/fusuma
+/home/wraient/.config/waybar
+/home/wraient/.config/HyprInsomnia
+/home/wraient/.config/kitty
+/home/wraient/.config/jerry
+/home/wraient/.config/mov-cli
+/home/wraient/.gitignore
+
+#install these packages
+noto-fonts
+noto-fonts-emoji
+ffmpeg
+feh
+fzf
+kitty
+parallel
+hyprland (paru) # wayland compositor
+ohmyzsh # better zsh shell
+fusuma (paru) # touchpad gestures
+xdotool # fusuma dependency, MAYBE
+playerctl # control audio players
+pamixer (pacman) # coutrol audio levels
+dunst # notify-daemon
+zsh # better bash shell
+git # git
+vim # vim 
+hyprshade (paru) # screenshotting dependency
+jq (paru) # screenshoting dependency
+grimblast (paru) # screenshoting dependency
+swappy # edit images from screenshot
+wl-clipboard # clipboard history
+cliphist # clipboard history
+brightnessctl # brightness control
+wofi (paru) # menu
+waybar # notification bar
+bluez-utils # bluetooth lib
+blueman # bluetooth deamon
+neofetch # neofetch
+swaylock # lock screen
+wlogout (paru) # lock screen
+mpc # media control
+mpv # play media
+swww (paru) # change wallpaper
+ntfs-3g
+thunar
+swaylock
+gedit
+lightdm 
+lightdm-gtk-greeter 
+xss-lock
+# install custom application
+spicetify-cli
+#spicetify-themes-git
+#spicetify-marketplace-bin
+
+7-zip-full (paru)
+noto-fonts-cjk
+dolphin (paru)
+brave-bin (paru)
+discord
+spotify-launcher
+telegram-desktop
+wine (paru)
+neovim
+mov-cli (pip)
+# freedownloadmanager
+
+
+#run these commands
+
+# pre install
+git clone https://aur.archlinux.org/paru
+cd paru/
+makepkg -si
+
+# system config
+systemctl start bluetooth
+systemctl enable bluetooth
+
+# post install
+sudo usermod -a -G input $(username)
+vencord
+
+#nvchad
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+
+#spicetify
+spicetify backup apply
+

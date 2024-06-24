@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Set wallpaper directory (replace if needed)
+wallpaper_dir="/home/wraient/Pictures/wall/"
+
+# Get all image files (adjust if you want specific formats)
+images=$(find "$wallpaper_dir" -type f -name "*.jpg" -o -name "*.png")
+
+# Check if there are any images found
+if [[ -z "$images" ]]; then
+  echo "No images found in '$wallpaper_dir'"
+  exit 1
+fi
+
+# Get a random image from the list
+random_image=$(echo "$images" | shuf -n 1)
+
+# Set the random image as Swaylock background
+swaylock -i "$random_image"
+
+echo "Swaylock started with random wallpaper: $random_image"
+

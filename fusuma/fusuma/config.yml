@@ -1,0 +1,39 @@
+swipe:
+  4:
+    up:
+      command: "pamixer --increase 5 && /home/wraient/.config/hypr/scripts/volumecontrol.sh -o i" # volume up, priority threshold
+      threshold: 0.00001
+    down:
+      command: "pamixer --decrease 5 && /home/wraient/.config/hypr/scripts/volumecontrol.sh -o d" # volume down, priority threshold
+      threshold: 0.00001
+    right:
+      command: "playerctl previous --player spotify" # previous song spotify, default threshold
+      treshold: 2
+    left:
+      command: "playerctl next --player spotify" # next song spotify, default threshold
+      treshold: 2
+  # 3:
+  #   right:
+  #     command: "playerctl previous --player brave" # previous song spotify, default threshold
+  #     treshold: 2
+  #   left:
+  #     command: "playerctl next --player brave" # next song spotify, default threshold
+  #     treshold: 2
+
+hold:
+  3:
+    command: "playerctl play-pause --player brave" # pause/play brave
+  4:
+    command: "playerctl play-pause --player spotify" # pause/play spotify
+    threshold: 0.5
+
+threshold: # default threshold
+  pinch: 0.3
+  swipe: 0.4
+  hold: 0.1
+
+plugin: # plugin for tap gesture (does not work for some reason)
+  inputs:
+    libinput_command_input:
+      enable-tap: true
+      verbose: true
