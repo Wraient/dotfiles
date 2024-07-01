@@ -3,9 +3,10 @@ import subprocess
 import sys
 import re
 import os
-
+import time
 import httpx
 from pypresence import Presence
+import datetime
 
 CLIENT_ID = "1084791136981352558"
 ENDPONT = "https://kitsu.io/api/"
@@ -68,24 +69,35 @@ while True:
         content = file.read()
     pattern = r'(\(Paused\)\s)?AV:\s([0-9:]*) / ([0-9:]*) \(([0-9]*)%\)'
     matches = re.findall(pattern, content)
-    small_image = "https://images-ext-1.discordapp.net/external/dUSRf56flwFeOMFjafsUhIMMS_1Xs-ptjeDHo6TWn6c/%3Fquality%3Dlossless%26size%3D48/https/cdn.discordapp.com/emojis/1138835294506975262.png"
+    # small_image = "https://images-ext-1.discordapp.net/external/dUSRf56flwFeOMFjafsUhIMMS_1Xs-ptjeDHo6TWn6c/%3Fquality%3Dlossless%26size%3D48/https/cdn.discordapp.com/emojis/1138835294506975262.png"
     if matches:
         if matches[-1][0] == "(Paused) ":
             elapsed = matches[-1][1]
         else:
             elapsed = matches[-1][1]
+            # ftr = [3600,60,1]
+            # elapsed = sum([a*b for a,b in zip(ftr, map(int,elapsed.split(':')))]) # convert time string to time seconds
+            # the_time = int(time.time()) - int(elapsed)
+
         duration = matches[-1][2]
         position = f"{elapsed} / {duration}"
     else:
-        position = "00:00:00"
+        position = "Just Started"
+        elapsed="Just Started"
+        # the_time = time.time()
+    
 
     rpc_client.update(
         details=media_title,
+        # details="Watching",
         state=position,
+        # state=str(elapsed),
         large_image=media["posterImage"]["original"],
         large_text=media_title,
-        small_image=small_image,
-        small_text=f"Episode {episode_count}"
+        # start=the_time,
+        # small_image=small_image,
+        small_text=f"Episode {episode_count}",
+        buttons=[{"label":"Join me <3", "url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]
     )
 
     if process.poll() is not None:
