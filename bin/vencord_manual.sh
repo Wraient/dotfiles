@@ -21,7 +21,7 @@ chmod +x "$outfile"
 
 if command -v sudo >/dev/null; then
   echo "Running with sudo"
-  sudo env "$@" "$outfile" --install --branch stable
+  sudo env "$@" "$outfile"
 elif command -v doas >/dev/null; then
   echo "Running with doas"
   doas env "$@" "$outfile"
