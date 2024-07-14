@@ -5,7 +5,7 @@
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
 	<unique-id>1720183434350730-1</unique-id>
-	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<command>exo-open --working-directory %f --launch alacritty</command>
 	<description>Example for a custom action</description>
 	<range></range>
 	<patterns>*</patterns>
@@ -14,13 +14,58 @@
 </action>
 <action>
 	<icon></icon>
-	<name>Unzip</name>
+	<name>Extract here (zip)</name>
 	<submenu></submenu>
 	<unique-id>1720940946201604-1</unique-id>
 	<command>unzip %f</command>
 	<description>Unzip a file</description>
 	<range>*</range>
 	<patterns>*.zip</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Extract here (bzip2)</name>
+	<submenu></submenu>
+	<unique-id>1720941257756633-2</unique-id>
+	<command>tar xjf %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.tar.bz2;*.tbz2</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Create tar.gz from folder</name>
+	<submenu></submenu>
+	<unique-id>1720941595517784-3</unique-id>
+	<command>tar czvf %n.tar.gz %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>Open thunar as root here</name>
+	<submenu></submenu>
+	<unique-id>1720941797523387-4</unique-id>
+	<command>pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY dbus-launch thunar %f
+</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>Extract Here (7z)</name>
+	<submenu></submenu>
+	<unique-id>1720941965464400-5</unique-id>
+	<command>7z x %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
 	<other-files/>
 </action>
 </actions>
