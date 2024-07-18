@@ -65,7 +65,29 @@
 	<command>7z x %f</command>
 	<description></description>
 	<range>*</range>
+	<patterns>*.7z</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Make Executable</name>
+	<submenu></submenu>
+	<unique-id>1720942095695391-6</unique-id>
+	<command>sudo chmod +x %f</command>
+	<description>Make a file executable</description>
+	<range>*</range>
 	<patterns>*</patterns>
 	<other-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Make all files executable</name>
+	<submenu></submenu>
+	<unique-id>1720942147801388-7</unique-id>
+	<command>chmod +x %d/*</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
 </action>
 </actions>
