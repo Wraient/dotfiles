@@ -7,10 +7,10 @@ swipe:
       command: "pamixer --decrease 5 && /home/wraient/.config/hypr/scripts/volumecontrol.sh -o d" # volume down, priority threshold
       threshold: 0.00001
     right:
-      command: "playerctl previous --player spotify" # previous song spotify, default threshold
+      command: "playerctl previous --player spotify; playerctl previous --player cider" # previous song spotify, default threshold
       treshold: 2
     left:
-      command: "playerctl next --player spotify" # next song spotify, default threshold
+      command: "playerctl next --player spotify; playerctl next --player cider" # next song spotify, default threshold
       treshold: 2
   # 3:
   #   right:
@@ -22,9 +22,9 @@ swipe:
 
 hold:
   3:
-    command: "playerctl play-pause --player brave" # pause/play brave
+    command: "playerctl play-pause --player brave; playerctl play-pause --player firefox" # pause/play brave
   4:
-    command: "playerctl play-pause --player spotify" # pause/play spotify
+    command: "playerctl play-pause --player spotify; playerctl play-pause --player cider" # pause/play spotify / cider
     threshold: 0.5
 
 threshold: # default threshold
