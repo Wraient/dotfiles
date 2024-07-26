@@ -35,7 +35,8 @@ i)  # increase the backlight
         # increase the backlight by 5% otherwise
         brightnessctl set +5%
     fi
-    send_notification ;;
+    ;;
+    # send_notification ;;
 d)  # decrease the backlight
     if [[ $(get_brightness) -le 1 ]] ; then
         # avoid 0% brightness
@@ -47,7 +48,8 @@ d)  # decrease the backlight
         # decrease the backlight by 5% otherwise
         brightnessctl set 5%-
     fi
-    send_notification ;;
+    ;;
+    # send_notification ;;
 *)  # print error
     print_error ;;
 esac
