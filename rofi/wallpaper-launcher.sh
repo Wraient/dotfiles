@@ -21,7 +21,7 @@
 
 # Set some variables
 wall_dir="${HOME}/Pictures/wall/"
-cacheDir="${HOME}/.cache/jp/${theme}"
+cacheDir="${HOME}/.cache/jp${theme}"
 rofi_command="rofi -dmenu -theme ${HOME}/.config/rofi/wallSelect.rasi -theme-str ${rofi_override}"
 
 # Create cache dir if not exists
@@ -42,7 +42,7 @@ for imagen in "$wall_dir"/*.{jpg,jpeg,png,webp}; do
 	if [ -f "$imagen" ]; then
 		nombre_archivo=$(basename "$imagen")
 			if [ ! -f "${cacheDir}/${nombre_archivo}" ] ; then
-				magick -strip "$imagen" -thumbnail 500x500^ -gravity center -extent 500x500 "${cacheDir}/${nombre_archivo}"
+				magick "$imagen" -thumbnail 500x500^ -gravity center -extent 500x500 "${cacheDir}/${nombre_archivo}"
 			fi
     fi
 done
