@@ -21,9 +21,12 @@ $button-radius: $radius;
     }
 }
 
+$bg : #000000;
+
 .bar {
     transition: $transition;
-    background-color: $bg;
+    // background-color: $bg;
+    background-color: #000000;
 
     .panel-button {
         @include panel-button;
