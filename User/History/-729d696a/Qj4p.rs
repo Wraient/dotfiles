@@ -1,0 +1,16 @@
+// use std::io;
+
+fn main(){
+    let mut s = String::from("Hello");
+    
+    // let ref1 = s;
+
+    func1(&mut s);
+
+    println!("{}", s);
+
+}
+
+fn func1(s: &mut String){
+    s.push_str(", World");
+}
