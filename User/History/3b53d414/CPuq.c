@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main(){
+    for(int i=0; i<=300; i+=20){
+        int c = (5*(i-32))/9;
+        printf("%d\t%d\n",i,c);
+    }
+}
