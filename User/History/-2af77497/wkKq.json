@@ -1,8 +1,0 @@
-{
-    "git.autofetch": true,
-    "files.autoSave": "afterDelay",
-    "git.confirmSync": false,
-    "git.enableSmartCommit": true,
-    "workbench.colorTheme": "AMOLED",
-    "code-runner.customCommand": "./run.sh $filename"
-}

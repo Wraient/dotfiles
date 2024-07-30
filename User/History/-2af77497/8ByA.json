@@ -1,7 +1,0 @@
-{
-    "git.autofetch": true,
-    "files.autoSave": "afterDelay",
-    "git.confirmSync": false,
-    "git.enableSmartCommit": true,
-    "workbench.colorTheme": "AMOLED"
-}
