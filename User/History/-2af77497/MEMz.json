@@ -1,6 +1,0 @@
-{
-    "git.autofetch": true,
-    "files.autoSave": "afterDelay",
-    "git.confirmSync": false,
-    "workbench.colorTheme": "Solarized Light"
-}
