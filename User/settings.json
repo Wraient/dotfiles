@@ -276,5 +276,6 @@
     "vim.smartRelativeLine": true,
     "tabnine.experimentalAutoImports": true,
     "window.menuBarVisibility": "toggle",
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "explorer.confirmDragAndDrop": false
 }
