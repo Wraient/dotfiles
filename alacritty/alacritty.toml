@@ -3,7 +3,7 @@ opacity=0.50
 padding={ x = 5, y = 0}
 
 [font.normal]
-family = "CaskaydiaMonoNerdFont"
+family = "Cascadia Code"
 style = "semilight"
 
 [scrolling]
