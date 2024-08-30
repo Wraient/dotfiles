@@ -24,4 +24,10 @@ done
 export CHROME_VERSION_EXTRA='stable'
 
 # exec /opt/brave-bin/brave "${FLAG_LIST[@]}" "${@}"
-exec /opt/brave-bin/brave --ozone-platform=wayland --password-store=basic --ozone-platform-hint=auto --enable-features=TouchpadOverscrollHistoryNavigation "$@" $USER_FLAGS
+if [ "$1" == "1" ]; then
+  echo 1
+  exec /opt/brave-bin/brave --password-store=basic --enable-features=TouchpadOverscrollHistoryNavigation "$@" $USER_FLAGS
+else
+  echo 0
+  exec /opt/brave-bin/brave --ozone-platform=wayland --password-store=basic --ozone-platform-hint=auto --enable-features=TouchpadOverscrollHistoryNavigation "$@" $USER_FLAGS
+fi
