@@ -15,8 +15,10 @@ fi
 # Get a random image from the list
 random_image=$(echo "$images" | shuf -n 1)
 
-# Set the random image as Swaylock background
-swaylock -i "$random_image"
+echo $random_image
 
-echo "Swaylock started with random wallpaper: $random_image"
+# Set the random image as Swaylock background
+# swaylock -i "$random_image"
+
+# echo "Swaylock started with random wallpaper: $random_image"
 
