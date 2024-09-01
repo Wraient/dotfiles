@@ -113,3 +113,11 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zoxide init
 eval "$(zoxide init zsh)"
+
+# Hindi font
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# ibus-daemon -drx
+#
+eval "$(starship init zsh)"

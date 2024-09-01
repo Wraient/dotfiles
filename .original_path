@@ -1,2 +1,3 @@
 /home/$USER/.zshrc
+/home/$USER/.config/starship.toml
 /home/$USER/.config/Thunar/uca.xml
