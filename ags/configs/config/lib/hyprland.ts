@@ -52,7 +52,7 @@ function sendBatch(batch: string[]) {
 
 async function setupHyprland() {
     // const wm_gaps = Math.floor(hyprland.gaps.value * spacing.value)
-    const wm_gaps = 12
+    const wm_gaps = 6
 
     sendBatch([
         `general:border_size ${width}`,
