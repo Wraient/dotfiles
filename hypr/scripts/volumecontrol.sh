@@ -27,7 +27,7 @@ notify_vol ()
     angle="$(( (($vol+2)/5) * 5 ))"
     ico="${icodir}/vol-${angle}.svg"
     bar=$(seq -s "." $(($vol / 15)) | sed 's/[0-9]//g')
-    # dunstify "t2" -a "${vol}${bar}" "${nsink}" -i $ico -r 91190 -t 800
+    notify-send "Volume toggle" -a "${vol}${bar}" "${nsink}" -i $ico -r 91190 -t 800
 }
 
 notify_mute ()
@@ -35,9 +35,9 @@ notify_mute ()
     mute=$(pamixer "${srce}" --get-mute | cat)
     [ "${srce}" == "--default-source" ] && dvce="mic" || dvce="speaker"
     if [ "${mute}" == "true" ] ; then
-        # dunstify "t2" -a "muted" "${nsink}" -i ${icodir}/muted-${dvce}.svg -r 91190 -t 800
+        notify-send "Volume toggle" -a "muted" "${nsink}" -i ${icodir}/muted-${dvce}.svg -r 91190 -t 800
     else
-        # dunstify "t2" -a "unmuted" "${nsink}" -i ${icodir}/unmuted-${dvce}.svg -r 91190 -t 800
+        notify-send "Volume toggle" -a "unmuted" "${nsink}" -i ${icodir}/unmuted-${dvce}.svg -r 91190 -t 800
     fi
 }
 
