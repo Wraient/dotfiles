@@ -1,3 +1,4 @@
 #!/bin/bash
 source ~/venv/bin/activate
-python3 /home/wraient/.hidden/curd/curd.py $1
+python_script="/home/wraient/.hidden/curd/curd.py"
+python3 "$python_script" "$@"
