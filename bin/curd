@@ -1,4 +1,0 @@
-#!/bin/bash
-source ~/venv/bin/activate
-python_script="/home/wraient/.hidden/curd/curd.py"
-python3 "$python_script" "$@"
