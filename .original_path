@@ -1,4 +1,4 @@
-/home/$USER/.zshrc
-/home/$USER/.config/starship.toml
-/home/$USER/.gitignore
-/home/$USER/.config/Thunar/uca.xml
+$HOME/.zshrc
+$HOME/.config/starship.toml
+$HOME/.gitignore
+$HOME/.config/Thunar/uca.xml
