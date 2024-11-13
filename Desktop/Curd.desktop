@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Curd
+Exec=env WINEPREFIX="/home/wraient/.wine" wine C:\\\\Program\\ Files\\ \\(x86\\)\\\\Curd\\\\curd.exe 
+Type=Application
+StartupNotify=true
+Path=/home/wraient/.wine/dosdevices/c:/Program Files (x86)/Curd
+StartupWMClass=curd.exe

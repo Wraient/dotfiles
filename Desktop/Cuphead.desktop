@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Cuphead
+Exec=env WINEPREFIX="/home/wraient/.wine" wine C:\\\\users\\\\Public\\\\Desktop\\\\Cuphead.lnk
+Type=Application
+StartupNotify=true
+Path=/home/wraient/.wine/dosdevices/c:/GOG Games/Cuphead
+Icon=7CE6_goggame-1963513391.0
+StartupWMClass=cuphead.exe
