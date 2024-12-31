@@ -1,8 +1,8 @@
-#!/home/wraient/.local/share/pipx/venvs/fastanime/bin/python
+#!/home/wraient/.local/share/uv/tools/fastanime/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
 from fastanime import FastAnime
-if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+if __name__ == "__main__":
+    sys.argv[0] = re.sub(r"(-script\.pyw|\.exe)?$", "", sys.argv[0])
     sys.exit(FastAnime())

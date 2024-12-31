@@ -1,0 +1,12 @@
+background = 000000
+foreground = ffffff
+cursor-style = bar
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 5
+link-url = true
+title = "Ghostty"
+window-vsync = true
+window-decoration = false
+background-opacity = 0.5
+background-blur-radius = 20
+window-inherit-working-directory = true
