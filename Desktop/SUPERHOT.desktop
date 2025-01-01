@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=SUPERHOT
-Exec=env WINEPREFIX="/home/wraient/.wine" wine C:\\\\users\\\\Public\\\\Desktop\\\\SUPERHOT.lnk
-Type=Application
-StartupNotify=true
-Path=/home/wraient/.wine/dosdevices/c:/GOG Games/SUPERHOT/
-Icon=8B8F_goggame-1456141688.0
-StartupWMClass=superhot.exe

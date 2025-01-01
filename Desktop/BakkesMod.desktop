@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=BakkesMod
-Exec=env WINEPREFIX="/home/wraient/.wine" wine C:\\\\users\\\\Public\\\\Desktop\\\\BakkesMod.lnk
-Type=Application
-StartupNotify=true
-Path=/home/wraient/.wine/dosdevices/c:/Program Files/BakkesMod
-Icon=742F_BakkesMod.0
-StartupWMClass=bakkesmod.exe

@@ -10,3 +10,12 @@ window-decoration = false
 background-opacity = 0.5
 background-blur-radius = 20
 window-inherit-working-directory = true
+resize-overlay-position = top-right
+resize-overlay-duration = 400ms
+clipboard-trim-trailing-spaces = true
+# keybind = ctrl+q=toggle_quick_terminal
+keybind = ctrl+d=clear_screen
+keybind = ctrl+n=new_window
+keybind = alt+d=toggle_window_decorations
+# quick-terminal-screen = main
+gtk-single-instance = true

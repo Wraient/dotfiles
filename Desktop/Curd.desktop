@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Curd
-Exec=env WINEPREFIX="/home/wraient/.wine" wine C:\\\\users\\\\wraient\\\\AppData\\\\Roaming\\\\Curd\\\\curd.exe 
-Type=Application
-StartupNotify=true
-Path=/home/wraient/.wine/dosdevices/c:/users/wraient/AppData/Roaming/Curd
-StartupWMClass=curd.exe

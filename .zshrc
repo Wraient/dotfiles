@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:/home/wraient/.local/bin:/home/wraient/.local/share/gem/ruby/3.*/bin"
+export PATH="$PATH:/home/wraient/.local/bin:/home/wraient/.local/share/gem/ruby/3.*/bin:/home/wraient/go/bin"
+
 export QT_QPA_PLATFORM=wayland
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
