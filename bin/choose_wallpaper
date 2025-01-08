@@ -14,15 +14,13 @@ fi
 
 # Generate temporary thumbnails (adjust width and height as needed)
 for wallpaper in $wallpapers; do
-  feh -q --width 100 --height 75 "$wallpaper_dir/$wallpaper" > "/tmp/wallpaper_thumb_$wallpaper" 2>/devv/null
+  feh -q --width 100 --height 75 "$wallpaper" > "/tmp/wallpaper_thumb_$wallpaper" 2>/dev/null
 done
 
 # Display Wofi menu with wallpaper names
-# chosen_wallpaper=$(wofi -dmenu -width 40 -lines 5 -separator '\n' -color-scheme ~/.config/rofi/wallpaper.rasi <<< "$wallpapers")
-chosen_wallpaper=$(wofi -dmenu -width 40 -lines 5 -separator '\n' -                                 visual \
+chosen_wallpaper=$(wofi -dmenu -width 40 -lines 5 -separator '\n' -visual \
   "icon: /tmp/wallpaper_thumb_{#wofi_cache1}" <<< "$wallpapers")
 rm -f /tmp/wallpaper_thumb_*
-
 
 # Check if a wallpaper was chosen
 if [[ -z "$chosen_wallpaper" ]]; then
@@ -32,5 +30,16 @@ fi
 # Set the chosen wallpaper (replace 'fehbg' with your preferred setter)
 swww img "$chosen_wallpaper"
 
+# Generate the color scheme with py-wal
+wal -i "$chosen_wallpaper"
+
+# Source the generated colors for shell environment
+source ~/.cache/wal/colors.sh
+
+# Apply the colors to Ghostty
+# Assuming Ghostty uses the same shell configuration, the colors are applied globally.
+# If you want to apply the color scheme specifically to Ghostty, you may need to adjust its configuration (e.g., `~/.config/ghostty/config.toml`).
+
+# Print confirmation
 echo "Wallpaper set to: $chosen_wallpaper"
 

@@ -54,10 +54,19 @@ full_wall_path=$(find "$wall_dir" -type f \( -iname "$wall_selection" \))
 if [ -f "$full_wall_path" ]; then
     echo "Setting wallpaper: $full_wall_path"
     swww img "$full_wall_path"
+
+    # Generate the color scheme with py-wal (wal)
+    wal -i "$full_wall_path"
+
+    # Source the generated colors for the terminal (or shell session)
+    source "$HOME/.cache/wal/colors.sh"
+
+    # Optional: Apply the colors to specific applications if needed
+    # Example: alacritty, urxvt, etc.
+    # alacritty -e 'source ~/.cache/wal/colors.sh'
 else
     echo "Error: Wallpaper not found at $full_wall_path"
     exit 1
 fi
 
 exit 0
-

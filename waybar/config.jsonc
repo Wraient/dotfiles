@@ -6,7 +6,7 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 29,
+    "height": 40,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -15,9 +15,9 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/padd","custom/l_end","wlr/taskbar","mpris","custom/r_end","custom/padd"],
-	"modules-center": ["custom/padd","custom/l_end","idle_inhibitor","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","backlight","network","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/wallchange","custom/theme","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
+	"modules-left": ["custom/l_end","wlr/taskbar","custom/r_end","custom/l_end","mpris","custom/r_end"],
+	"modules-center": ["custom/l_end","idle_inhibitor","clock","custom/r_end"],
+	"modules-right": ["custom/l_end","backlight","network","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/power","custom/r_end"],
 
 
 // sourced from modules based on config.ctl //
@@ -50,7 +50,7 @@
         "status-icons": {
             "paused": "⏸"
         },
-        // "ignored-players": ["firefox"]
+        // "ignored-players": ["brave"],
         "max-length": 1000,
         "interval": 1
     },
@@ -65,9 +65,10 @@
     },
 
     "clock": {
-        "format": "{:%I:%M %p}",
+        // "format-alt": "{:%R 󰃭 %d·%m·%y}",
+        "format": "{:%R 󰃭 %d·%m·%y}",
+        "format-alt": "{:%I:%M %p}",
         "rotate": 0,
-        "format-alt": "{:%R 󰃭 %d·%m·%y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
@@ -101,14 +102,15 @@
 
     "network": {
         "tooltip": true,
-        "format-wifi": " ",
+        "format-wifi": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-alt": " ",
+        // "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "rotate": 0,
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2,
     },
 
@@ -118,8 +120,8 @@
         "format-muted": "婢",
         "on-click": "pavucontrol -t 3",
         "on-click-middle": "volumecontrol.sh -o m",
-        "on-scroll-up": "volumecontrol.sh -o i",
-        "on-scroll-down": "volumecontrol.sh -o d",
+        "on-scroll-up": "pamixer --increase 5 && /home/wraient/.config/hypr/scripts/volumecontrol.sh -o i",
+        "on-scroll-down": "pamixer --decrease 5 && /home/wraient/.config/hypr/scripts/volumecontrol.sh -o d",
         "tooltip-format": "{icon} {desc} // {volume}%",
         "scroll-step": 5,
         "format-icons": {
@@ -224,8 +226,8 @@
         "format": "{}",
         "rotate": 0,
         "exec": "echo ; echo  logout",
-        "on-click": "logoutlaunch.sh 2",
-        "on-click-right": "logoutlaunch.sh 1",
+        "on-click": "wlogout",
+        "on-click-right": "wlogout",
         "interval" : 86400, // once every day
         "tooltip": true
     },
