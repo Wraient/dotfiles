@@ -2,3 +2,4 @@ $HOME/.zshrc
 $HOME/.config/starship.toml
 $HOME/.gitignore
 $HOME/.config/Thunar/uca.xml
+$HOME/reset-usb.sh

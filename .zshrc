@@ -17,6 +17,12 @@ ZSH_THEME="alanpeabody"
 if [ -f "$HOME/.cache/wal/colors.sh" ]; then
     source "$HOME/.cache/wal/colors.sh"
 fi
+
+# Add Nix to PATH
+if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
