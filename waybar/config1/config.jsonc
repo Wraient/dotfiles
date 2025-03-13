@@ -1,109 +1,144 @@
 {
-    "height": 40, // Waybar height (to be removed for auto height)
-    "layer": "top", // Waybar at top layer
-    "modules-left": ["custom/launcher", "cpu", "memory", "wlr/workspaces", "custom/weather"],
-    "modules-right": ["tray", "network", "pulseaudio",  "backlight", "battery", "custom/lock", "clock", "custom/power-menu"],
-    "wlr/workspaces": {
-      "format": "{icon}",
-      "on-click": "activate",
-      "format-icons": {
-        "active": " 󰮯",
-        "default": "",
-      }
-    },
-    "hyprland/window": {
-        "format": "{}"
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{:%H:%M}",
-        "format-alt": "{:%b %d %Y}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    },
-
-    "cpu": {
-      "interval": 10,
-      "format": " {}%",
-      "max-length": 10,
-      "on-click": "",
-    },
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "format-alt":" {used:0.1f}GB",
-        "max-length": 10,
-    },
-    "backlight": {
-        "device": "eDP-1",
-        "format": "{icon}",
-        "tooltip-format": "{percent}",
-        "format-icons": ["󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "],
-
-    },
-    "network": {
-        /* "format-wifi": "直", */
-        "format-wifi": "{icon}",
-        "format-ethernet": " ",
-        "format-disconnected": "睊",
-        "tooltip-format": "{essid}",
-        "on-click": "~/.config/waybar/scripts/network/rofi-network-manager.sh",
-        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-    },
-
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-muted": "婢",
-        "format-icons": {
-            "default": ["", "", "墳"]
-        },
-        "on-click": "pavucontrol &"
-    },
-
-    "battery": {
-      "bat": "BAT0",
-      "adapter": "ADP0",
-      "interval": 60,
-      "states": {
-          "warning": 30,
-          "critical": 15
-      },
-      "max-length": 20,
-      "format": "{icon} ",
-      "format-warning": "{icon}",
-      "format-critical": "{icon}",
-      "format-charging": "<span font-family='Font Awesome 6 Free'></span>",
-      "format-plugged": "ﮣ", 
-
-      "format-alt": "{icon} {time}",
-      "format-full": "ﮣ", 
-      "format-icons": ["󱊡", "󱊢", "󱊣"]
-    },
-    "custom/weather": {
-      "exec": "python3 ~/.config/waybar/scripts/weather.py",
-      "restart-interval": 300,
-      "return-type": "json",
-    },   
-   "custom/lock": {
-       "tooltip" : false,
-       "on-click": "swaylock",
-       "format" : "",
-    },
-   "custom/spotify": {
-        "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
-        "format": " {}",
-        "return-type": "json",
-        "on-click": "playerctl play-pause",
-        "on-double-click-right": "playerctl next",
-        "on-scroll-down": "playerctl previous",
-    },
-    "custom/power-menu": {
-        "format": " ⏻ ",
-        "on-click": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh &",
-    }, 
-    "custom/launcher": {
-        "format": "",
-        "on-click": "rofi -show drun &",
-    },
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": 0,
+  "modules-left": [
+    "clock",
+    "custom/separator",
+    "hyprland/workspaces",
+    "custom/separator",
+    "tray"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "temperature",
+    "memory",
+    "cpu",
+    "pulseaudio",
+    "battery",
+    "network",
+    "custom/separator",
+    "custom/powermenu"
+  ],
+  "custom/separator": {
+    "exec": "echo \"|\"",
+    "format": "{}"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "clock": {
+    // 24 hour
+    // "format": " {:%H:%M} ",
+    // 12 hour
+    "format": " 󰸗 {:%I:%M %p} ",
+    "interval": 60,
+    "tooltip": true,
+    "tooltip-format": "{:%d %B %H:%M}"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "separate-outputs": false,
+    "active-only": false,
+    // turn on true to show same all workspaces on each monitor
+    "all-outputs": false,
+    "format-icons": {
+      // 1-10
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      // 11-10
+      "11": "1",
+      "12": "2",
+      "13": "3",
+      "14": "4",
+      "15": "5",
+      "16": "6",
+      "17": "7",
+      "18": "8",
+      "19": "9",
+      "110": "10"
+      
+      // // 1-10
+      // "1": "一",
+      // "2": "二",
+      // "3": "三",
+      // "4": "四",
+      // "5": "五",
+      // "6": "六",
+      // "7": "七",
+      // "8": "八",
+      // "9": "九",
+      // "10": "十",
+      // // 11-10
+      // "11": "一",
+      // "12": "二",
+      // "13": "三",
+      // "14": "四",
+      // "15": "五",
+      // "16": "六",
+      // "17": "七",
+      // "18": "八",
+      // "19": "九",
+      // "110": "十"
+	  }
+  },
+  "hyprland/window": {
+    "format": "{}"
+  },
+  "network": {
+    "format": " 󰖩",
+    // "tooltip": "{ifname}",
+    "tooltip-format": "{essid}",
+    "interval": 2
+  },
+  "temperature": {
+    "format": "{icon} {temperatureC}°C ",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "memory": {
+    "format": "󰫗 {}% ",
+    "tooltip": "false"
+  },
+  "cpu": {
+    "format": " {usage}% ",
+    "tooltip": "false"
+  },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "custom/powermenu": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "exec wlogout -p layer-shell"
+  }
 }
+
