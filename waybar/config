@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "reload_style_on_change": true,
-    "modules-left": ["hyprland/workspaces","custom/pacman","custom/spotify"],
+    "modules-left": ["custom/pacman","custom/spotify"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "group/expand","network","pulseaudio","pulseaudio#microphone","backlight","bluetooth","battery"],
 
