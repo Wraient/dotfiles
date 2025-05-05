@@ -25,7 +25,7 @@ hold:
     command: "playerctl play-pause --player brave; playerctl play-pause --player firefox" # pause/play brave
     threshold: 0.5
   4:
-    command: "playerctl play-pause --player plasma-browser-integration; playerctl play-pause --player spotify; playerctl play-pause --player cider" # pause/play spotify / cider
+    command: "playerctl play-pause --player spotify; playerctl play-pause --player cider" # pause/play spotify / cider
     threshold: 0.5
 
 threshold: # default threshold

@@ -4,3 +4,4 @@ $HOME/.gitignore
 $HOME/.config/Thunar/uca.xml
 $HOME/reset-usb.sh
 /usr/local/bin/controller_reset
+$HOME/gate
