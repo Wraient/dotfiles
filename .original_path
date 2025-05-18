@@ -1,7 +1,6 @@
-$HOME/.zshrc
-$HOME/.config/starship.toml
 $HOME/.gitignore
-$HOME/.config/Thunar/uca.xml
-$HOME/reset-usb.sh
-/usr/local/bin/controller_reset
+$HOME/.zshrc
 $HOME/gate
+$HOME/reset-usb.sh
+$HOME/.config/starship.toml
+$HOME/.config/Thunar/uca.xml

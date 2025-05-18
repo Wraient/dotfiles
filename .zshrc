@@ -11,6 +11,8 @@ eval "$(pyenv init -)"
 alias kde="startplasma-x11"
 alias kdew="startplasma-wayland"
 alias hypr="Hyprland"
+# alias svi='sudo -E /home/$USER/.local/bin/vi'
+alias svi="sudo -E $(command -v vi)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
