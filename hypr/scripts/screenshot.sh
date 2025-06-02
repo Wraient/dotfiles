@@ -43,6 +43,7 @@ focused_output() {
 select_area() {
 	region=$(slurp)
 	[ -n "$region" ] && grim -g "$region" - | tee "$temp_screenshot" | wl-copy
+  # grim /home/wraient/Pictures/study/$(date +%Y-%m-%d_%H-%M-%S).png
 }
 select_area_freeze() {
 	# No actual freeze in plain grim — placeholder for now
