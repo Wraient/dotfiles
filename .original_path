@@ -5,3 +5,4 @@ $HOME/reset-usb.sh
 $HOME/.config/starship.toml
 $HOME/.config/Thunar/uca.xml
 $HOME/recording
+$HOME/.config/myd/config
