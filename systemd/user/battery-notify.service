@@ -1,0 +1,14 @@
+[Unit]
+Description=Battery status notification and suspension script
+# This makes sure it runs after your graphical session is ready
+After=graphical-session.target
+
+[Service]
+ExecStart=/home/wraient/.local/bin/battery_notify.sh
+# Restart the service if it ever fails
+Restart=always
+RestartSec=10
+
+[Install]
+# This makes the service start automatically at user login
+WantedBy=default.target
