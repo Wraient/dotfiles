@@ -4,7 +4,7 @@ Description=Battery status notification and suspension script
 After=graphical-session.target
 
 [Service]
-ExecStart=/home/wraient/.local/bin/battery_notify.sh
+ExecStart=/home/$USER/.local/bin/battery_notify.sh
 # Restart the service if it ever fails
 Restart=always
 RestartSec=10
