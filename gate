@@ -8,10 +8,26 @@ CN - 156 Hours 8.1 marks 2023 - 2018
 EM - 5.8 marks 2023 - 2018
 PDS - DS - 60.5 Hours CP - 56.4 Hours 10 marks 2023 - 2018
 Algorithms - 67.65 Hours 7.8 marks 2023 - 2018
-DM - 48 Hours 52 marks 2023 - 2018
+DM - 138 Hours 8.6 marks 2023 - 2018
 
-Total - 832 Hours
+Total - 969 Hours
 
 8 Hours
 2 Hours
 1 Hour
+
+Discrete Mathematics (DM) - The language of CS. Highest efficiency.
+
+Data Structures & Algorithms (PDS/DS/Algo) - Highest marks, leverages your practical skill.
+
+Theory of Computation (TOC) - Builds on DM, prerequisite for Compilers.
+
+Digital Logic (DL) - Prerequisite for the next subject.
+
+Computer Organization & Architecture (COA) - Build directly on DL.
+
+Database Management Systems (DBMS) - Uses concepts from DM and DS.
+
+Computer Networks (CN) - The big time-sink, best done when other major subjects are secure.
+
+Compiler Design (CD) - The final capstone, ties everything together.
