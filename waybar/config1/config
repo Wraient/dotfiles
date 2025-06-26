@@ -117,7 +117,7 @@
     "custom/spotify": {
         "format": " ♫ {}",
         "interval": 1,   
-        "exec": "echo $(playerctl --player spotify metadata artist) - $(playerctl --player spotify metadata title) | cut -c 1-50",
+        "exec": "echo $(playerctl --player spotify metadata artist) - $(playerctl --player spotify metadata title) | cut -c 1-30",
         "exec-if": "exit 0",
         "on-click": "playerctl --player spotify play-pause; playerctl --player cider",
         "signal": 8,
