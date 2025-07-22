@@ -21,12 +21,12 @@ ffmpeg -i sr1.mkv -i vc1.mp4 -filter_complex "\
 -map "[out]" -c:v libx264 -crf 23 -preset ultrafast final.mp4
 
 # Portrait only camera
-ffmpeg -i Screenrecorder-2025-06-08-23-51-47-483.mp4 -filter_complex "\
+ffmpeg -i vc1.mp4 -filter_complex "\
 [0:v]split=2[main][cam]; \
 [cam]crop=296:605:865:174,scale=1328:2712[front]; \
 [main]scale=1220:2712[orig]; \
 [orig][front]hstack=inputs=2[out]" \
--map "[out]" -c:v libx264 -crf 18 -preset veryfast output.mp4
+-map "[out]" -c:v libx264 -crf 18 -preset veryfast out1.mp4
 
 # Portrait 1080p only camera center
 ffmpeg -i Screenrecorder-2025-06-08-23-51-47-483.mp4 -filter_complex "\

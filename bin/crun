@@ -1,3 +1,3 @@
-gcc -Wall -Wextra -std=c11 -D_POSIX_C_SOURCE=200809L -D_DEFAULT_SOURCE -include "$HOME/Projects/Languages/C/LearningFr/bootdev_prelude.h" main.c "$HOME/Projects/Languages/C/LearningFr/deps/munit/munit.c" -I. $(find "$HOME/Projects/Languages/C/LearningFr/deps" -mindepth 1 -maxdepth 1 -type d -printf "-I%p ") -o main_lesson -lrt && ./main_lesson
+gcc -Wall -Wextra -std=c11 -D_POSIX_C_SOURCE=200809L -D_DEFAULT_SOURCE -include "$HOME/Projects/Languages/C/LearningFr/bootdev_prelude.h" *.c "$HOME/Projects/Languages/C/LearningFr/deps/munit/munit.c" -I. $(find "$HOME/Projects/Languages/C/LearningFr/deps" -mindepth 1 -maxdepth 1 -type d -printf "-I%p ") -o main_lesson -lrt && ./main_lesson
 
 rm -rf main_lesson
