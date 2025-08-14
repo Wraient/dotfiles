@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Obsidien Sync on startup
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'source ~/venv/bin/activate && python3 ~/Projects/automation/obsidien-sync/pc.py'
+WorkingDirectory=%h
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
