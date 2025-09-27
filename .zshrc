@@ -3,8 +3,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:/home/wraient/.local/bin:/home/wraient/.local/share/gem/ruby/3.*/bin:/home/wraient/go/bin"
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
 
 export QT_QPA_PLATFORM=wayland
 export PYENV_ROOT="$HOME/.pyenv"
@@ -268,3 +266,9 @@ fi
 export CHROME_EXECUTABLE=/home/wraient/.local/bin/brave
 fpath=(~/.oh-my-zsh/completions $fpath)
 autoload -U compinit && compinit
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export ANDROID_HOME=$HOME/Android
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
