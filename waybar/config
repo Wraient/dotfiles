@@ -4,7 +4,7 @@
     "height": 24,
     "spacing": 5,
 
-    "modules-left": ["custom/pacman", "wlr/taskbar", "memory", "temperature", "custom/spotify"],
+    "modules-left": ["custom/pacman", "wlr/taskbar", "memory", "temperature", "custom/song"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "custom/record", "wireplumber", "backlight", "network", "bluetooth", "battery"], // Removed "hyprland/language" ""
 
@@ -114,12 +114,13 @@
         "format": "  {temperatureC}°C"
     },
     
-    "custom/spotify": {
+    "custom/song": {
         "format": " ♫ {}",
         "interval": 1,   
-        "exec": "echo $(playerctl --player spotify metadata artist) - $(playerctl --player spotify metadata title) | cut -c 1-50",
+        "exec": "echo $(playerctl --ignore-player=vivaldi,plasma-browser-integration metadata artist) - $(playerctl --ignore-player=vivaldi,plasma-browser-integration metadata title) | cut -c 1-50",
         "exec-if": "exit 0",
-        "on-click": "playerctl --player spotify play-pause; playerctl --player cider",
+        "on-click": "playerctl --ignore-player=vivaldi,plasma-browser-integration play-pause",
+        "on-click-right": "playerctl --ignore-player=vivaldi,plasma-browser-integration next",
         "signal": 8,
         "tooltip": false
     },
